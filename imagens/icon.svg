@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Fundo do pin (vermelho) -->
+  <defs>
+    <linearGradient id="pinGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF5B4D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E83E2B;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="circleGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00D4FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0F6BFF;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Pin (marcador de mapa) -->
+  <path d="M256 50 C180 50 120 110 120 186 C120 280 256 462 256 462 C256 462 392 280 392 186 C392 110 332 50 256 50 Z" fill="url(#pinGradient)" />
+  
+  <!-- Círculo azul com gradiente -->
+  <circle cx="256" cy="186" r="85" fill="url(#circleGradient)" />
+  
+  <!-- Cruz médica (branca/vermelha) -->
+  <g>
+    <!-- Barra horizontal -->
+    <rect x="215" y="155" width="82" height="18" fill="#FF5B4D" rx="4" />
+    <!-- Barra vertical -->
+    <rect x="245" y="125" width="22" height="122" fill="#FF5B4D" rx="4" />
+  </g>
+</svg>
