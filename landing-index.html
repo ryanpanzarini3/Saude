@@ -1,0 +1,595 @@
+<!-- 
+LANDING PAGE - ÍNDICE VISUAL
+Página central de navegação entre documentação, demos e recursos
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Saúde PG - Central de Recursos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f8fafc;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #0F6BFF 0%, #10B981 100%);
+            color: white;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .navbar h1 {
+            font-size: 1.75rem;
+            font-weight: 800;
+        }
+
+        .navbar p {
+            opacity: 0.95;
+            font-size: 0.95rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #0F6BFF 0%, #10B981 100%);
+            color: white;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            font-size: 3rem;
+            line-height: 1;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            color: #1f2937;
+        }
+
+        .card-desc {
+            color: #64748b;
+            margin-bottom: 1rem;
+            flex: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .tag {
+            background: #f0f4ff;
+            color: #0F6BFF;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #0F6BFF 0%, #10B981 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(15, 107, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: #f0f4ff;
+            color: #0F6BFF;
+            border: 2px solid #0F6BFF;
+        }
+
+        .btn-secondary:hover {
+            background: #0F6BFF;
+            color: white;
+        }
+
+        .section-header {
+            padding: 2rem 0;
+            border-bottom: 2px solid #e5e7eb;
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: #0F6BFF;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: #64748b;
+            font-size: 1.05rem;
+        }
+
+        .row-highlight {
+            background: #f0f4ff;
+            border-left: 4px solid #0F6BFF;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 2rem 0;
+        }
+
+        .row-highlight h3 {
+            color: #0F6BFF;
+            margin-bottom: 0.75rem;
+        }
+
+        .quick-access {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .quick-link {
+            background: white;
+            border: 2px solid #e5e7eb;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            color: #0F6BFF;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .quick-link:hover {
+            border-color: #0F6BFF;
+            background: #f0f4ff;
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            background: #1a1f3a;
+            color: white;
+            padding: 2rem;
+            margin-top: 4rem;
+            text-align: center;
+            border-radius: 1rem;
+        }
+
+        .emoji {
+            font-size: 0.95em;
+            margin-right: 0.25rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .navbar h1 {
+                font-size: 1.3rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-content">
+            <h1>🎯 Landing Page Saúde PG</h1>
+            <p>Central de Recursos - Documentação, Demos e Ferramentas</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Quick Start -->
+        <div class="row-highlight">
+            <h3>⚡ Início Rápido</h3>
+            <p>Comece aqui! Escolha uma das opções abaixo para sua necessidade:</p>
+            <div class="quick-access">
+                <a href="landing.html" class="quick-link">👁️ Ver Demo</a>
+                <a href="landing-sumario.html" class="quick-link">📊 Sumário Visual</a>
+                <a href="LANDING_README.md" class="quick-link">📖 Resumo Rápido</a>
+                <a href="landing-teste.html" class="quick-link">🧪 Validar</a>
+            </div>
+        </div>
+
+        <!-- Seção: Demos e Testes -->
+        <div class="section-header">
+            <h2>👁️ Demos e Testes</h2>
+            <p>Visualize como a landing page funciona e valide a implementação</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-header">👀</div>
+                <div class="card-content">
+                    <h2>Landing Page</h2>
+                    <p class="card-desc">
+                        Veja a landing page em ação com todos os 4 cards, animações e interações funcionando.
+                    </p>
+                    <div class="card-meta">
+                        <span class="tag">HTML + CSS + JS</span>
+                        <span>5 min</span>
+                    </div>
+                    <a href="landing.html" class="btn btn-primary">Abrir Demo</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">🧪</div>
+                <div class="card-content">
+                    <h2>Validação Completa</h2>
+                    <p class="card-desc">
+                        Checklist interativo para verificar se tudo foi implementado corretamente. Muito útil!
+                    </p>
+                    <div class="card-meta">
+                        <span class="tag">Interativa</span>
+                        <span>10 min</span>
+                    </div>
+                    <a href="landing-teste.html" class="btn btn-primary">Validar</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">📊</div>
+                <div class="card-content">
+                    <h2>Sumário Executivo</h2>
+                    <p class="card-desc">
+                        Visão geral visual de tudo o que foi implementado, com estatísticas e checklist.
+                    </p>
+                    <div class="card-meta">
+                        <span class="tag">Visual</span>
+                        <span>5 min</span>
+                    </div>
+                    <a href="landing-sumario.html" class="btn btn-primary">Ver Sumário</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção: Documentação -->
+        <div class="section-header">
+            <h2>📚 Documentação</h2>
+            <p>Guias detalhados para entender, usar e customizar a landing page</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-header">📄</div>
+                <div class="card-content">
+                    <h2>Resumo Rápido</h2>
+                    <p class="card-desc">
+                        Primeira leitura recomendada. Visão geral, como funciona, responsividade e próximos passos.
+                    </p>
+                    <div class="card-meta">
+                        <span class="tag">Essencial</span>
+                        <span>5 min</span>
+                    </div>
+                    <a href="LANDING_README.md" class="btn btn-primary">Ler Resumo</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">📖</div>
+                <div class="card-content">
+                    <h2>Guia Completo</h2>
+                    <p class="card-desc">
+                        Documentação técnica detalhada com explicações de cada arquivo, funcionalidade e acessibilidade.
+                    </p>
+                    <div class="card-meta">
+                        <span class="tag">Referência</span>
+                        <span>20 min</span>
+                    </div>
+                    <a href="LANDING_PAGE_GUIA.md" class="btn btn-primary">Ler Guia</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">📋</div>
+                <div class="card-content">
+                    <h2>Sumário em Markdown</h2>
+                    <p class="card-desc">
+                        Documento markdown com visão completa do projeto, arquivos, estatísticas e próximos passos.
+                    </p>
+                    <div class="card-meta">
+                        <span class="tag">Completo</span>
+                        <span>15 min</span>
+                    </div>
+                    <a href="LANDING_SUMARIO.md" class="btn btn-primary">Ler Sumário</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção: Customização -->
+        <div class="section-header">
+            <h2>🎨 Customização</h2>
+            <p>Exemplos práticos de como personalizar cores, textos, animações e comportamento</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-header">🛠️</div>
+                <div class="card-content">
+                    <h2>Guia de Personalização</h2>
+                    <p class="card-desc">
+                        10 exemplos práticos: alterar cores, textos, adicionar cards, mudar animações, customizar layout.
+                    </p>
+                    <div class="card-meta">
+                        <span class="tag">Prático</span>
+                        <span>15 min</span>
+                    </div>
+                    <a href="LANDING_PERSONALIZACAO.md" class="btn btn-primary">Ver Exemplos</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">🚀</div>
+                <div class="card-content">
+                    <h2>Guia de Deploy</h2>
+                    <p class="card-desc">
+                        Tudo para deploy em produção: checklist, upload, otimização, analytics, segurança e monitoramento.
+                    </p>
+                    <div class="card-meta">
+                        <span class="tag">Produção</span>
+                        <span>30 min</span>
+                    </div>
+                    <a href="LANDING_DEPLOYMENT.md" class="btn btn-primary">Ver Deploy</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção: Arquivos Principais -->
+        <div class="section-header">
+            <h2>💾 Arquivos Principais</h2>
+            <p>Os 3 arquivos principais que fazem a landing page funcionar</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-header">🔴</div>
+                <div class="card-content">
+                    <h2>landing.html</h2>
+                    <p class="card-desc">
+                        Estrutura HTML da landing page com 4 cards interativos, navegação acessível e semântica.
+                    </p>
+                    <div class="card-meta">
+                        <span class="tag">5 KB</span>
+                        <span>HTML</span>
+                    </div>
+                    <button class="btn btn-secondary" onclick="alert('Arquivo: landing.html\\n\\nLocalização: c:\\Users\\907598\\Saúde\\Saude\\landing.html\\n\\n- Contém 4 cards com ícones\\n- aria-labels para acessibilidade\\n- Feather Icons importados\\n- Meta tags SEO')">Ver Detalhes</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">🎨</div>
+                <div class="card-content">
+                    <h2>landing-style.css</h2>
+                    <p class="card-desc">
+                        Estilos completos com gradiente, responsividade, animações, modo escuro e acessibilidade.
+                    </p>
+                    <div class="card-meta">
+                        <span class="tag">8 KB</span>
+                        <span>CSS</span>
+                    </div>
+                    <button class="btn btn-secondary" onclick="alert('Arquivo: landing-style.css\\n\\nLocalização: c:\\Users\\907598\\Saúde\\Saude\\landing-style.css\\n\\n- Variáveis CSS customizáveis\\n- Gradiente azul-verde\\n- Grid responsivo 2x2 → 1 coluna\\n- Animações suaves\\n- Modo escuro incluso')">Ver Detalhes</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">⚙️</div>
+                <div class="card-content">
+                    <h2>landing-script.js</h2>
+                    <p class="card-desc">
+                        Lógica JavaScript com navegação, efeitos interativos, teclado e gerenciamento de sessão.
+                    </p>
+                    <div class="card-meta">
+                        <span class="tag">2 KB</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <button class="btn btn-secondary" onclick="alert('Arquivo: landing-script.js\\n\\nLocalização: c:\\Users\\907598\\Saúde\\Saude\\landing-script.js\\n\\n- Feather Icons init\\n- Event listeners (clique, teclado)\\n- Efeito ripple\\n- Redirecionamento inteligente\\n- sessionStorage management')">Ver Detalhes</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção: Arquivos de Suporte -->
+        <div class="section-header">
+            <h2>📦 Arquivos de Suporte</h2>
+            <p>Documentação, testes e exemplos para facilitar o uso</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-header">🧪</div>
+                <div class="card-content">
+                    <h2>landing-teste.html</h2>
+                    <p class="card-desc">
+                        Página interativa com checklist, validação de implementação e instruções de teste.
+                    </p>
+                    <div class="card-meta">
+                        <span class="tag">Validação</span>
+                        <span>Interativa</span>
+                    </div>
+                    <a href="landing-teste.html" class="btn btn-primary">Abrir Testes</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">📊</div>
+                <div class="card-content">
+                    <h2>landing-sumario.html</h2>
+                    <p class="card-desc">
+                        Sumário executivo visual com estatísticas, funcionalidades e links de navegação.
+                    </p>
+                    <div class="card-meta">
+                        <span class="tag">Visual</span>
+                        <span>Executivo</span>
+                    </div>
+                    <a href="landing-sumario.html" class="btn btn-primary">Abrir Sumário</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">🗂️</div>
+                <div class="card-content">
+                    <h2>Este Índice</h2>
+                    <p class="card-desc">
+                        Página central de navegação entre todos os recursos, documentação, demos e ferramentas.
+                    </p>
+                    <div class="card-meta">
+                        <span class="tag">Hub</span>
+                        <span>Navegação</span>
+                    </div>
+                    <button class="btn btn-secondary" onclick="location.reload()">Recarregar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção: Páginas Modificadas -->
+        <div class="section-header">
+            <h2>📝 Páginas Modificadas</h2>
+            <p>5 páginas principais foram atualizadas com script de redirecionamento</p>
+        </div>
+
+        <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
+            <p style="margin-bottom: 1.5rem; color: #64748b;">
+                As seguintes páginas agora incluem um script que redireciona para a landing page na primeira visita:
+            </p>
+            <div class="quick-access">
+                <span style="background: #ecfdf5; color: #065f46; padding: 0.75rem 1rem; border-radius: 0.5rem; text-align: center; font-weight: 600;">
+                    ✓ index.html
+                </span>
+                <span style="background: #ecfdf5; color: #065f46; padding: 0.75rem 1rem; border-radius: 0.5rem; text-align: center; font-weight: 600;">
+                    ✓ mapa.html
+                </span>
+                <span style="background: #ecfdf5; color: #065f46; padding: 0.75rem 1rem; border-radius: 0.5rem; text-align: center; font-weight: 600;">
+                    ✓ atendimento.html
+                </span>
+                <span style="background: #ecfdf5; color: #065f46; padding: 0.75rem 1rem; border-radius: 0.5rem; text-align: center; font-weight: 600;">
+                    ✓ direitos.html
+                </span>
+                <span style="background: #ecfdf5; color: #065f46; padding: 0.75rem 1rem; border-radius: 0.5rem; text-align: center; font-weight: 600;">
+                    ✓ chat.html
+                </span>
+            </div>
+        </div>
+
+        <!-- Seção: Mapa Mental -->
+        <div class="section-header" style="margin-top: 4rem;">
+            <h2>🗺️ Mapa de Recursos</h2>
+            <p>Visão geral de como os recursos estão organizados</p>
+        </div>
+
+        <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
+            <pre style="background: #1a1f3a; color: #10b981; padding: 1.5rem; border-radius: 0.5rem; overflow-x: auto; font-size: 0.85rem;">
+📂 LANDING PAGE SAÚDE PG
+│
+├── 👁️ DEMOS
+│   ├── landing.html .................. Demo interativa
+│   ├── landing-teste.html ........... Validação completa
+│   └── landing-sumario.html ......... Sumário visual
+│
+├── 📚 DOCUMENTAÇÃO
+│   ├── LANDING_README.md ............ Resumo rápido (5 min)
+│   ├── LANDING_PAGE_GUIA.md ........ Guia completo (20 min)
+│   ├── LANDING_SUMARIO.md .......... Visão geral (15 min)
+│   ├── LANDING_PERSONALIZACAO.md .. Exemplos (15 min)
+│   └── LANDING_DEPLOYMENT.md ...... Deploy (30 min)
+│
+├── 💾 ARQUIVOS PRINCIPAIS
+│   ├── landing.html (5 KB) .......... Estrutura
+│   ├── landing-style.css (8 KB) ... Estilos
+│   └── landing-script.js (2 KB) ... Lógica
+│
+└── 📝 MODIFICADAS (5 arquivos)
+    ├── index.html
+    ├── mapa.html
+    ├── atendimento.html
+    ├── direitos.html
+    └── chat.html
+            </pre>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <h3 style="margin-bottom: 1rem;">✨ Landing Page Saúde PG</h3>
+            <p><strong>Versão:</strong> 1.0 | <strong>Status:</strong> ✅ Pronto para Produção</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                🎨 Design Responsivo | ♿ Acessibilidade WCAG AA | 🚀 Performance Otimizada | 📚 Documentação Completa
+            </p>
+            <p style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.7;">
+                Criado em Fevereiro 2026 | GitHub Copilot
+            </p>
+        </div>
+    </div>
+</body>
+</html>

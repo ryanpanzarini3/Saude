@@ -38,6 +38,14 @@
     <script src="components/quick-access.js"></script>
     <script src="components/unidades-proximas.js"></script>
     <script src="components/install-prompt.js"></script>
+    
+    <!-- Script para verificar landing page -->
+    <script>
+        // Redirecionar para landing page se não foi visitada nesta sessão
+        if (!sessionStorage.getItem('landingPageVisited')) {
+            window.location.href = 'landing.html';
+        }
+    </script>
 </head>
 <body class="bg-gray-50">
     <install-prompt></install-prompt>

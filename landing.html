@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0F6BFF">
+    <meta name="description" content="Saúde PG - Portal de Saúde Municipal de Ponta Grossa">
+    <title>SaúdePG - Bem-vindo</title>
+    
+    <!-- Ícones do App -->
+    <link rel="apple-touch-icon" href="./imagens/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="./imagens/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="./imagens/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./imagens/favicon-16x16.png">
+    <link rel="icon" type="image/svg+xml" href="./imagens/icon.svg">
+    
+    <!-- Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Feather Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    
+    <!-- Dotlottie Web Component -->
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js" type="module"></script>
+    
+    <!-- CSS da Landing Page -->
+    <link rel="stylesheet" href="landing-style.css">
+</head>
+<body class="landing-page">
+    <div class="landing-container">
+        <!-- Conteúdo Principal -->
+        <div class="landing-content">
+            <div class="landing-header">
+                <h1 class="landing-title">Como podemos te ajudar hoje?</h1>
+                <p class="landing-subtitle">Escolha uma opção para continuar</p>
+            </div>
+
+            <div class="landing-cards-grid">
+                <!-- Card 1: Mapeamento de Unidades -->
+                <button class="landing-card" data-route="/mapa" aria-label="Mapeamento de Unidades - Encontre postos, UBS e hospitais próximos">
+                    <div class="card-icon-wrapper">
+                        <svg data-feather="map-pin" class="card-icon"></svg>
+                    </div>
+                    <h2 class="card-title">Mapeamento de Unidades</h2>
+                    <p class="card-description">Encontre postos, UBS e hospitais próximos</p>
+                    <span class="card-arrow">→</span>
+                </button>
+
+                <!-- Card 2: Onde Ser Atendido -->
+                <button class="landing-card" data-route="/atendimento" aria-label="Onde Ser Atendido - Descubra o local ideal para o seu atendimento">
+                    <div class="card-icon-wrapper">
+                        <svg data-feather="compass" class="card-icon"></svg>
+                    </div>
+                    <h2 class="card-title">Onde Ser Atendido</h2>
+                    <p class="card-description">Descubra o local ideal para o seu atendimento</p>
+                    <span class="card-arrow">→</span>
+                </button>
+
+                <!-- Card 3: Direitos do Cidadão -->
+                <button class="landing-card" data-route="/direitos" aria-label="Direitos do Cidadão - Conheça seus direitos na saúde pública">
+                    <div class="card-icon-wrapper">
+                        <svg data-feather="shield" class="card-icon"></svg>
+                    </div>
+                    <h2 class="card-title">Direitos do Cidadão</h2>
+                    <p class="card-description">Conheça seus direitos na saúde pública</p>
+                    <span class="card-arrow">→</span>
+                </button>
+
+                <!-- Card 4: Chatbot de Saúde -->
+                <button class="landing-card" data-route="/chatbot" aria-label="Chatbot de Saúde - Tire dúvidas e receba orientações rápidas">
+                    <div class="card-icon-wrapper">
+                        <svg data-feather="message-circle" class="card-icon"></svg>
+                    </div>
+                    <h2 class="card-title">Chatbot de Saúde</h2>
+                    <p class="card-description">Tire dúvidas e receba orientações rápidas</p>
+                    <span class="card-arrow">→</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <footer class="landing-footer">
+            <p class="footer-text">Informação pública, gratuita e acessível</p>
+        </footer>
+    </div>
+
+    <script src="landing-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,518 @@
+/* ====================================
+   LANDING PAGE STYLES
+   ==================================== */
+
+:root {
+    --primary-blue: #0F6BFF;
+    --primary-green: #10B981;
+    --primary-cyan: #00D4FF;
+    --primary-dark: #1a1f3a;
+    --text-primary: #1f2937;
+    --text-secondary: #64748b;
+    --bg-light: #f8fafc;
+    --border-light: #e5e7eb;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset e Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.landing-page {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: linear-gradient(135deg, #0F6BFF 0%, #10B981 100%);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* Container Principal */
+.landing-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Background decorativo */
+.landing-container::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Conteúdo */
+.landing-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInUp 0.8s ease-out;
+    position: relative;
+    z-index: 2;
+}
+
+/* Header */
+.landing-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+/* Logo Animada */
+.landing-logo {
+    margin-bottom: 2rem;
+    animation: fadeInDown 0.8s ease-out 0.2s both;
+}
+
+.logo-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: white;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.5px;
+    animation: scaleIn 0.8s ease-out 0.5s both;
+}
+
+.landing-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    letter-spacing: -0.5px;
+}
+
+.landing-subtitle {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid de Cards */
+.landing-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Card */
+.landing-card {
+    background: white;
+    border: none;
+    border-radius: 1rem;
+    padding: 2rem;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    outline: none;
+}
+
+/* Efeito hover - elevação */
+.landing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Foco para acessibilidade (teclado) */
+.landing-card:focus {
+    outline: 3px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 2px;
+}
+
+/* Efeito hover - seta */
+.landing-card:hover .card-arrow {
+    transform: translateX(4px);
+}
+
+/* Ícone do Card */
+.card-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-cyan));
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 15px rgba(15, 107, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.landing-card:hover .card-icon-wrapper {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(15, 107, 255, 0.4);
+}
+
+.card-icon {
+    width: 40px;
+    height: 40px;
+    stroke: white;
+    stroke-width: 2;
+}
+
+/* Título do Card */
+.card-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+/* Descrição do Card */
+.card-description {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+/* Seta do Card */
+.card-arrow {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    font-weight: 700;
+    margin-top: auto;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+/* Rodapé */
+.landing-footer {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 2;
+}
+
+.footer-text {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+}
+
+/* ====================================
+   ANIMAÇÕES
+   ==================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) translateY(30px);
+    }
+    50% {
+        opacity: 1;
+    }
+    70% {
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotateLogo {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.landing-card {
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.landing-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.landing-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.landing-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.landing-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* ====================================
+   RESPONSIVE DESIGN
+   ==================================== */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .logo-circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    .logo-svg {
+        width: 60px;
+        height: 60px;
+    }
+
+    .logo-text {
+        font-size: 1.1rem;
+    }
+
+    .landing-title {
+        font-size: 2rem;
+    }
+
+    .landing-subtitle {
+        font-size: 1rem;
+    }
+
+    .landing-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        max-width: 100%;
+    }
+
+    .landing-container {
+        padding: 1.5rem;
+    }
+
+    .landing-header {
+        margin-bottom: 2rem;
+    }
+
+    .card-icon-wrapper {
+        width: 70px;
+        height: 70px;
+    }
+
+    .card-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .card-description {
+        font-size: 0.9rem;
+    }
+}
+
+/* Smartphones */
+@media (max-width: 480px) {
+    .logo-circle {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 0.75rem;
+    }
+
+    .logo-svg {
+        width: 50px;
+        height: 50px;
+    }
+
+    .logo-text {
+        font-size: 1rem;
+    }
+
+    .landing-title {
+        font-size: 1.75rem;
+    }
+
+    .landing-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .landing-container {
+        padding: 1rem;
+    }
+
+    .landing-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .landing-cards-grid {
+        gap: 1rem;
+    }
+
+    .landing-card {
+        padding: 1.5rem;
+    }
+
+    .card-icon-wrapper {
+        width: 60px;
+        height: 60px;
+    }
+
+    .card-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .card-description {
+        font-size: 0.85rem;
+    }
+
+    .landing-footer {
+        padding-top: 1.5rem;
+    }
+
+    .footer-text {
+        font-size: 0.8rem;
+    }
+}
+
+/* ====================================
+   ACESSIBILIDADE
+   ==================================== */
+
+/* Modo escuro */
+@media (prefers-color-scheme: dark) {
+    body.landing-page {
+        background: linear-gradient(135deg, #0A4BAD 0%, #0D8B5C 100%);
+    }
+
+    .landing-card {
+        background: #1f2937;
+        color: white;
+    }
+
+    .card-title {
+        color: white;
+    }
+
+    .card-description {
+        color: #d1d5db;
+    }
+
+    .landing-title,
+    .landing-subtitle {
+        color: white;
+    }
+}
+
+/* Reduz animações para usuários com preferência */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Contraste de foco */
+.landing-card:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.9);
+    outline-offset: 3px;
+}
+
+/* Espaço suficiente entre elementos para toque */
+@media (hover: none) and (pointer: coarse) {
+    .landing-card {
+        min-height: 56px;
+        padding: 1.75rem;
+    }
+}

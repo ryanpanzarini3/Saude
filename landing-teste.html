@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste da Landing Page - Saúde PG</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: #f8fafc;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #0F6BFF;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #0F6BFF;
+            padding-bottom: 1rem;
+        }
+        
+        h2 {
+            color: #1a1f3a;
+            margin: 2rem 0 1rem 0;
+            margin-top: 3rem;
+        }
+        
+        .checklist {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+        
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid #0F6BFF;
+            border-radius: 4px;
+            margin-right: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .checkbox:hover {
+            background: #f0f4ff;
+        }
+        
+        .checkbox.checked {
+            background: #0F6BFF;
+            color: white;
+        }
+        
+        .checkbox.checked::after {
+            content: '✓';
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .label {
+            cursor: pointer;
+            flex-grow: 1;
+            color: #1f2937;
+        }
+        
+        .status-icon {
+            margin-left: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .demo-link {
+            display: inline-block;
+            background: #0F6BFF;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            margin: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .demo-link:hover {
+            background: #0a4fb5;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(15, 107, 255, 0.3);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #0F6BFF;
+        }
+        
+        .feature-card h3 {
+            color: #0F6BFF;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-card p {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        
+        .code-block {
+            background: #1a1f3a;
+            color: #10b981;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin: 1rem 0;
+        }
+        
+        .alert {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+            color: #92400e;
+        }
+        
+        .success {
+            background: #ecfdf5;
+            border-left-color: #10b981;
+            color: #065f46;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Teste e Validação da Landing Page - Saúde PG</h1>
+        
+        <p style="color: #64748b; margin-bottom: 2rem;">
+            Esta página de teste ajuda a validar se toda a implementação da landing page foi feita corretamente.
+        </p>
+
+        <!-- ===== CHECKLIST DE ARQUIVOS ===== -->
+        <h2>📋 1. Arquivos Criados</h2>
+        <div class="checklist">
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">landing.html - Página HTML principal</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">landing-style.css - Estilos CSS</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">landing-script.js - Lógica JavaScript</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">LANDING_PAGE_GUIA.md - Documentação</label>
+            </div>
+        </div>
+
+        <!-- ===== CHECKLIST DE INTEGRAÇÃO ===== -->
+        <h2>🔧 2. Integração em Páginas Existentes</h2>
+        <div class="checklist">
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">index.html - Script de redirecionamento adicionado</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">mapa.html - Script de redirecionamento adicionado</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">atendimento.html - Script de redirecionamento adicionado</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">direitos.html - Script de redirecionamento adicionado</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">chat.html - Script de redirecionamento adicionado</label>
+            </div>
+        </div>
+
+        <!-- ===== CHECKLIST DE FUNCIONALIDADES ===== -->
+        <h2>✨ 3. Funcionalidades Implementadas</h2>
+        <div class="checklist">
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">Layout 100% viewport (fullscreen)</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">Título principal: "Como podemos te ajudar hoje?"</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">Subtítulo: "Escolha uma opção para continuar"</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">4 Cards com ícone + título + descrição</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">Card 1: Mapeamento de Unidades → /mapa</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">Card 2: Onde Ser Atendido → /atendimento</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">Card 3: Direitos do Cidadão → /direitos</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">Card 4: Chatbot de Saúde → /chatbot</label>
+            </div>
+        </div>
+
+        <!-- ===== CHECKLIST DE DESIGN ===== -->
+        <h2>🎨 4. Características de Design</h2>
+        <div class="checklist">
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">Gradiente azul-verde no fundo</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">Cards com bordas arredondadas</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">Cards com sombra leve</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">Animação hover: elevação (translateY)</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">Ícones SVG usando Feather Icons</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">Tipografia moderna (Inter + Poppins)</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">Grid responsivo 2x2 (desktop)</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">Grid responsivo 1 coluna (mobile)</label>
+            </div>
+        </div>
+
+        <!-- ===== CHECKLIST DE ACESSIBILIDADE ===== -->
+        <h2>♿ 5. Acessibilidade</h2>
+        <div class="checklist">
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">aria-label em todos os cards</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">Navegação por teclado (Tab)</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">Suporte a Enter e Space para ativar cards</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">Foco visível em elementos interativos</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">Contraste de cores WCAG AA</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">Suporte a modo escuro (prefers-color-scheme)</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">Respeita redução de movimento (prefers-reduced-motion)</label>
+            </div>
+        </div>
+
+        <!-- ===== CHECKLIST DE ANIMAÇÕES ===== -->
+        <h2>🎬 6. Animações e Interações</h2>
+        <div class="checklist">
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">Animação de entrada: fade + slide</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">Delay escalonado nos cards (0.1s-0.4s)</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">Hover: elevação dos cards</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">Hover: zoom do ícone</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">Hover: seta se move para direita</label>
+            </div>
+            <div class="checklist-item">
+                <div class="checkbox" onclick="toggleCheck(this)"></div>
+                <label class="label">Efeito ripple ao clicar</label>
+            </div>
+        </div>
+
+        <!-- ===== RECURSOS ===== -->
+        <h2>📚 Recursos Adicionais</h2>
+        <div class="features">
+            <div class="feature-card">
+                <h3>🔗 Demo Rápida</h3>
+                <p>Acesse a landing page diretamente para visualizar como ficou:</p>
+                <a href="landing.html" class="demo-link">Abrir Landing Page</a>
+            </div>
+            <div class="feature-card">
+                <h3>📖 Documentação</h3>
+                <p>Leia o guia completo com explicações detalhadas:</p>
+                <a href="LANDING_PAGE_GUIA.md" class="demo-link">Ver Documentação</a>
+            </div>
+            <div class="feature-card">
+                <h3>🔄 Fluxo de Navegação</h3>
+                <p>Entenda como o redirecionamento funciona:</p>
+                <code class="code-block">sessionStorage → landing.html → página_alvo</code>
+            </div>
+        </div>
+
+        <!-- ===== INSTRUÇÕES DE TESTE ===== -->
+        <h2>🧪 Instruções de Teste</h2>
+        
+        <h3 style="color: #1a1f3a; margin: 1.5rem 0 1rem;">Teste 1: Primeira Visita</h3>
+        <div class="alert success">
+            <strong>✓ Esperado:</strong> Landing page aparece automaticamente<br>
+            <strong>Como testar:</strong> Limpar sessionStorage → Acessar index.html ou qualquer página
+        </div>
+
+        <h3 style="color: #1a1f3a; margin: 1.5rem 0 1rem;">Teste 2: Clique nos Cards</h3>
+        <div class="alert success">
+            <strong>✓ Esperado:</strong> Cada card redireciona para a página correta<br>
+            <strong>Como testar:</strong> Clicar em cada card da landing page
+        </div>
+
+        <h3 style="color: #1a1f3a; margin: 1.5rem 0 1rem;">Teste 3: Navegação por Teclado</h3>
+        <div class="alert success">
+            <strong>✓ Esperado:</strong> Tab navega entre cards, Enter ativa<br>
+            <strong>Como testar:</strong> Pressionar Tab para navegar, Enter para ativar card
+        </div>
+
+        <h3 style="color: #1a1f3a; margin: 1.5rem 0 1rem;">Teste 4: Responsividade</h3>
+        <div class="alert success">
+            <strong>✓ Esperado:</strong> Layout se adapta para mobile (1 coluna)<br>
+            <strong>Como testar:</strong> Redimensionar janela ou usar DevTools modo responsivo
+        </div>
+
+        <h3 style="color: #1a1f3a; margin: 1.5rem 0 1rem;">Teste 5: Modo Escuro</h3>
+        <div class="alert success">
+            <strong>✓ Esperado:</strong> Landing page se adapta ao modo escuro<br>
+            <strong>Como testar:</strong> DevTools → Rendering → Emulate CSS media feature prefers-color-scheme
+        </div>
+
+        <!-- ===== RESUMO ===== -->
+        <h2>📊 Resumo de Implementação</h2>
+        <div class="alert success" style="margin: 2rem 0;">
+            <h3 style="color: #065f46; margin-bottom: 1rem;">✅ Implementação Completa</h3>
+            <ul style="margin-left: 1.5rem;">
+                <li>✓ 3 novos arquivos criados (HTML, CSS, JS)</li>
+                <li>✓ 5 páginas existentes atualizadas</li>
+                <li>✓ Sistema de redirecionamento funcional</li>
+                <li>✓ Design responsivo e moderno</li>
+                <li>✓ Acessibilidade completa (WCAG)</li>
+                <li>✓ Animações suaves e elegantes</li>
+                <li>✓ Navegação por teclado</li>
+                <li>✓ Modo escuro suportado</li>
+                <li>✓ Documentação detalhada</li>
+            </ul>
+        </div>
+
+        <!-- ===== PRÓXIMOS PASSOS ===== -->
+        <h2>🚀 Próximos Passos (Opcional)</h2>
+        <div style="background: white; padding: 1.5rem; border-radius: 0.75rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);">
+            <ul style="margin-left: 1.5rem; line-height: 2;">
+                <li><strong>Personalizar</strong> cores, fontes ou textos conforme marca</li>
+                <li><strong>Adicionar</strong> mais cards se novas seções forem criadas</li>
+                <li><strong>Implementar</strong> analytics para rastrear cliques nos cards</li>
+                <li><strong>Testar</strong> em dispositivos móveis reais</li>
+                <li><strong>Adicionar</strong> animação de carregamento de conteúdo</li>
+                <li><strong>Integrar</strong> com Sistema de Design do projeto</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleCheck(element) {
+            element.classList.toggle('checked');
+        }
+    </script>
+</body>
+</html>

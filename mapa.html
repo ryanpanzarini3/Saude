@@ -22,7 +22,10 @@
     <script src="components/footer.js"></script>
     <script src="components/install-prompt.js"></script>
     <script>
-
+        // Redirecionar para landing page se não foi visitada nesta sessão
+        if (!sessionStorage.getItem('landingPageVisited')) {
+            window.location.href = 'landing.html';
+        }
         document.getElementById('manifestLink').href = (window.APP_BASE_PATH || './') + 'manifest.json';
     </script>
     <style>
